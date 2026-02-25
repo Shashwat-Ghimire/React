@@ -5,6 +5,43 @@
   text-align: center;
 }
 
+.home-bg-container {
+  min-height: 100vh;
+  min-width: 100vw;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-content {
+  background: rgba(36, 36, 36, 0.7);
+  padding: 2rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.home-content h1 {
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.home-content button {
+  font-size: 1.2rem;
+  padding: 0.75rem 2rem;
+  margin: 0.5rem 0;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

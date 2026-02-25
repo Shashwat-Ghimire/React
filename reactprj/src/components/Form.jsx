@@ -25,11 +25,14 @@ function Form() {
 			backgroundImage: 'url(https://static.vecteezy.com/system/resources/previews/004/141/314/original/blue-sky-wallpaper-clear-air-heavenly-background-illustration-vector.jpg)',
 			backgroundSize: 'cover',
 			backgroundPosition: 'center',
-			minHeight: '100vh',
+			backgroundAttachment: 'fixed',
 			display: 'flex',
 			flexDirection: 'column',
 			alignItems: 'center',
-			justifyContent: 'center'
+			justifyContent: 'center',
+			height: '75vh',
+			width: '65vw',
+			
 		}}>
 			<form onSubmit={handleSubmit} style={{
 				background: 'rgba(255,255,255,0.8)',
