@@ -21,18 +21,18 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get('https://jsonplaceholder.typicode.com/photos')
+      .get('https://jsonplaceholder.typicode.com/comments')
       .then(res => setData(res.data))
-      .catch(() => alert('Failed to load photos'))
+      .catch(() => alert('Failed to load comments'))
       .finally(() => setLoading(false));
   }, []);
 
   const columns = [
-    { title: 'Album ID', data: 'albumId' },
+    { title: 'Post ID', data: 'postId' },
     { title: 'ID', data: 'id' },
-    { title: 'Title', data: 'title' },
-    { title: 'URL', data: 'url' },
-    { title: 'Thumbnail URL', data: 'thumbnailUrl' }
+    { title: 'Name', data: 'name' },
+    { title: 'Email', data: 'email' },
+    { title: 'Body', data: 'body' }
   ];
 
 
