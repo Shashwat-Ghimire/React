@@ -7,9 +7,9 @@
 
 .home-bg-container {
   min-height: 100vh;
-  min-width: 100vw;
-  width: 100vw;
-  height: 100vh;
+  min-width: 75vw;
+  width: 50vw;
+  height: 90vh;
   background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
   background-size: cover;
   background-position: center;

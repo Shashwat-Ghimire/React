@@ -35,6 +35,9 @@ function Home() {
     { title: 'Thumbnail URL', data: 'thumbnailUrl' }
   ];
 
+
+
+
   if (loading) {
     return (
       <div className="d-flex justify-content-center align-items-center vh-100">
@@ -46,24 +49,27 @@ function Home() {
   return (
     <>
 
-    <Link to="/testing">
-      <button>Go to Testing</button>
-    </Link>
-    <Link to="/contexts">
-      <button>Go to Contexts</button>
-    </Link>
+    
     <br />
     <p>Count: {count}</p>
     <br />
     <p>Calc: {calc}</p>
     <br />
     <button onClick={() => setCount(count + 1)}>Increment + </button>
+    <br />
 
-    
+    <Link to="/testing">
+      <button>Go to Testing</button>
+    </Link>
+    <Link to="/contexts">
+      <button>Go to Contexts</button>
+    </Link>
     <Link to="/form">
       <button>Go to Form</button>
     </Link>
-    <Link to="/home"></Link>
+    <Link to="/home">
+        <button>Go to Home</button>
+    </Link>
 
     <div className="container py-5">
       <h2 className="text-center mb-4">Photos Directory</h2>
