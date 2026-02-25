@@ -7,11 +7,27 @@ function Form() {
 		name: '',
 		address: '',
 		phone: '',
-		age: ''
+		age: '',
+		email: '',
+		password: '',
+		gender: '',
+		hobbies: [],
+		bio: ''
 	});
 
 	function handleChange(e) {
-		setForm({ ...form, [e.target.name]: e.target.value });
+		const { name, value, type, checked } = e.target;
+		if (type === 'checkbox') {
+			setForm(prev => {
+				if (checked) {
+					return { ...prev, hobbies: [...prev.hobbies, value] };
+				} else {
+					return { ...prev, hobbies: prev.hobbies.filter(hobby => hobby !== value) };
+				}
+			});
+		} else {
+			setForm({ ...form, [name]: value });
+		}
 	}
 
 	function handleSubmit(e) {
@@ -44,17 +60,27 @@ function Form() {
 				<label>Name:</label>
 				<input name="name" value={form.name} onChange={handleChange} />
 			</div>
-            <br />
+			<br />
+			<div>
+				<label>Email:</label>
+				<input type="email" name="email" value={form.email} onChange={handleChange} />
+			</div>
+			<br />
+			<div>
+				<label>Password:</label>
+				<input type="password" name="password" value={form.password} onChange={handleChange} />
+			</div>
+			<br />
 			<div>
 				<label>Address:</label>
 				<input name="address" value={form.address} onChange={handleChange} />
 			</div>
-            <br />
+			<br />
 			<div>
 				<label>Phone:</label>
 				<input name="phone" value={form.phone} onChange={handleChange} />
 			</div>
-            <br />
+			<br />
 			<div>
 				<label>Age Range:</label>
 				<select name="age" value={form.age} onChange={handleChange}>
@@ -65,7 +91,27 @@ function Form() {
 					<option value="51plus">51+</option>
 				</select>
 			</div>
-            <br />
+			<br />
+			<div>
+				<label>Gender:</label>
+				<input type="radio" name="gender" value="male" checked={form.gender === 'male'} onChange={handleChange} /> Male
+				<input type="radio" name="gender" value="female" checked={form.gender === 'female'} onChange={handleChange} /> Female
+				<input type="radio" name="gender" value="other" checked={form.gender === 'other'} onChange={handleChange} /> Other
+			</div>
+			<br />
+			<div>
+				<label>Hobbies:</label>
+				<input type="checkbox" name="hobbies" value="reading" checked={form.hobbies.includes('reading')} onChange={handleChange} /> Reading
+				<input type="checkbox" name="hobbies" value="sports" checked={form.hobbies.includes('sports')} onChange={handleChange} /> Sports
+				<input type="checkbox" name="hobbies" value="music" checked={form.hobbies.includes('music')} onChange={handleChange} /> Music
+				<input type="checkbox" name="hobbies" value="travel" checked={form.hobbies.includes('travel')} onChange={handleChange} /> Travel
+			</div>
+			<br />
+			<div>
+				<label>Bio:</label>
+				<textarea name="bio" value={form.bio} onChange={handleChange} rows={3} />
+			</div>
+			<br />
 			<button type="submit">Submit</button>
 		</form>
 		<Link to="/">
